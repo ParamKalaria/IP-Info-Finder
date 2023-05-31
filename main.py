@@ -1,7 +1,8 @@
 import requests
 import json
-
-api = "https://api.iplocation.net/?ip=8.8.8.8"
+import sys
+ip = sys.argv[1]
+api = f"https://api.iplocation.net/?ip={ip}"
 
 def get_data():
     news_in = requests.get(api)
