@@ -1,7 +1,7 @@
 import requests
 import json
 
-api = "https://api.iplocation.net/?ip="
+api = "https://api.iplocation.net/?ip=8.8.8.8"
 
 def get_data():
     news_in = requests.get(api)
@@ -11,10 +11,6 @@ def get_data():
 def data_format(dt_data):
     json_object = json.loads(dt_data)
     json_formatted_str = json.dumps(json_object, indent=2)
-    to_jsonfile_write(json_formatted_str)
+    print(json_formatted_str)
 
-def to_jsonfile_write(dt):
-    with open('news.json', 'w') as w:
-        w.write(dt)
-        w.flush()
-        w.close()
+get_data()
